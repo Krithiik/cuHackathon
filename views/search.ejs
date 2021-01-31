@@ -1,0 +1,52 @@
+<%- include ('partials/header.ejs') %>
+<body>
+<div class="container" >
+<h1 style="margin-top:100px;">Meal planner</h1>
+<div class="row">
+<div class="col-md-6">
+<form class="form-group" action="/results" autocomplete="off" method="GET" >
+    <ul class="ui list">
+        <li><label> Ingredient that you want to be in the food (optional)<p></p> <input type="text-area"  class="form-control" placeholder="eg:egg,peas" name="like"></label></li>
+        <p></p>
+        <li><label>Calories per meal: <p></p><input type="number" class="form-control" placeholder="Calories" name="cal" required></label></li>
+        <div class="ui container">
+        <p class="bold">Choose any of these :</p>
+        <li><label><input type="checkbox" class="ui item checkbox" value="vegetarian"name="health"> Vegetarian</label></li>
+        <li><label><input type="checkbox" class="ui item checkbox" value="vegan" name="health"> Vegan</label></li>        
+        <li><label><input type="checkbox" class="ui checkbox" value="sugar-conscious" name="health"> Sugar conscious</label></li>
+        <li><label><input type="checkbox" class="ui checkbox" value="peanut-free" name="health"> Penut-free</label></li>
+        <li><label><input type="checkbox" class="ui checkbox" value="tree-nut-free" name="health"> Tree-nut free</label></li>
+        <li><label><input type="checkbox" class="ui checkbox" value="alcohol-free" name="health"> Alcohol-free</label></li>
+        </div>
+        <p></p>
+        <div class="ui container">
+        <p  class="diet bold">DIET :</p>
+        <li><label><input type="checkbox" class="ui checkbox" value="balanced" name="diet" id="balanced" onclick="uncheck()"> Balanced</label></li>
+        <li><label><input type="checkbox" class="ui checkbox" value="high-protein" name="diet" id="others" onclick="check()"> High-protein</label></li>
+        <li><label><input type="checkbox" class="ui checkbox" value="low-fat" name="diet" id=others onclick="check()"> Low-fat</label></li>
+        <li><label><input type="checkbox" class="ui checkbox" value="low-carb" name="diet" id=others onclick="check()"> Low-carbs</label></li>
+        </div>
+    </ul>
+
+    <input class="btn btn-outline-primary"type="submit" value="Get Menu">
+</form>
+</div>
+<div class="container col-md-6">
+    <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/slide1-gettyimages-156857421-pumpkin-salad-cultura-brett-stevens-1518557549.jpg?resize=480:*">
+</div> 
+</div>
+</div>    
+<script>
+    function uncheck(){
+     var items=document.getElementsByName('diet');
+				for(var i=1; i<items.length; i++){
+					if(items[i].type=='checkbox')
+                        items[i].checked=false;
+                }}	
+    function check(){
+        var items=document.getElementsByName('diet');
+        items[0].checked=false;
+    }            		
+</script>
+</body>
+<%- include ('partials/footer.ejs') %>

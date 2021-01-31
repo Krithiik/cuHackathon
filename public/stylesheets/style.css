@@ -1,0 +1,53 @@
+.input{
+    outline:none;
+}
+.ui.container{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.diet{
+    margin-top: 5px;
+}
+body{
+    background-color:#F0E6FF;
+}
+.ui.segment.meal{
+    background-color:#F0E6FF;
+}
+p.ui.input{
+    border-color: white;
+}
+.bold{
+    font-size: medium;
+}
+.ui.container{
+    padding:5px;
+    margin:5px;
+
+}
+.tittle{
+    font-size: large;
+}
+.sub{
+    font-size: medium;
+}
+.item.men{
+    background-color:#F0E6FF ;
+}
+.name{
+    font-size: large;
+}
+.total{
+    background-color: #AC5DFC;
+    float:none;
+    padding:15px;
+    border:15px;
+    width:100%;
+}
+body{
+    background: url("https://images.unsplash.com/photo-1611521153700-94176b109d8c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80") center center / cover  ;
+}
+
+.navbar{
+    margin-bottom: 300px;
+}

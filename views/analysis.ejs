@@ -1,0 +1,72 @@
+<%- include ('partials/header.ejs') %>
+<div class="container">
+<h1 style="margin-top:100px;">ANALAYSIS</h1>
+<ul>
+        <!-- <% data["hits"].forEach(function(dish){ %>
+            <strong><li class="tittle"><%= dish["recipe"]["label"] %></li></strong>
+            <p></p>
+                    <p>Calories: <%= (dish["recipe"]["calories"]).toFixed(2)%> Kcal</p>
+                    <p>Fat: <%= (dish["recipe"]["totalNutrients"]["FAT"]["quantity"]).toFixed(2)%> gm</p> 
+                    <p>Carbohydrates: <%= (dish["recipe"]["totalNutrients"]["CHOCDF"]["quantity"]).toFixed(2)%> gm</p>
+                    <p>Protein: <%= (dish["recipe"]["totalNutrients"]["PROCNT"]["quantity"]).toFixed(2)%> gm </p>
+                    <p>Vitamin A: <%= (dish["recipe"]["totalNutrients"]["VITA_RAE"]["quantity"]).toFixed(2)%> μgm</p>
+                    <p>Vitamin C: <%= (dish["recipe"]["totalNutrients"]["VITC"]["quantity"]).toFixed(2)%> mg</p>
+                    <p>Calcium: <%= (dish["recipe"]["totalNutrients"]["CA"]["quantity"]).toFixed(2)%> mg</p>
+                    <p>Pottasium: <%= (dish["recipe"]["totalNutrients"]["K"]["quantity"]).toFixed(2)%> mg</p>
+                    <p>Magnesium: <%= (dish["recipe"]["totalNutrients"]["MG"]["quantity"]).toFixed(2)%> mg</p>
+        <%  }) %> -->
+    <div class="container">
+        <h2>Total Nutrients</h2>
+        <p>Carbohydrates:<span class="fg"><%=carb.toFixed(2)%></span>mg</p>
+        <p>Fat:<span class="fg"> <%=fat.toFixed(2)%></span>mg</p>
+        <p>Protein:<span class="fg"> <%=prot.toFixed(2)%></span>mg</p>
+        <p>Vitamins:<span class="fg"> <%=vit.toFixed(2)%></span>mg</p>
+        <p>Minerals:<span class="fg"><%=min.toFixed(2)%></span>mg</p>
+    </div>
+</ul>
+<div class="chart">
+<script>
+    var price=[];
+    var total=0;
+    var perc=[];
+    var gdata=document.getElementsByClassName("fg");
+     for (var i = 0; i < gdata.length; i++) {
+          price[i] = gdata[i].innerText;
+          total=total+price[i];
+     }
+     for(var i=0;i<price.length;i++){
+         perc[i]=parseInt(price[i])*100/total;
+     }
+    console.log(price);
+    console.log(perc);
+    window.onload = function() {
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title: {
+            text: "Diet distribution"
+        },
+        data: [{
+            type: "pie",
+            startAngle: 240,
+            yValueFormatString: "##0.00\"mg\"",
+            indexLabel: "{label} {y}",
+            dataPoints: [
+                {y: price[0] , label: "carbohydrate"},
+                {y: price[1], label: "Fat"},
+                {y: price[2] , label: "Protein"},
+                {y: price[3], label: "Vitamins"},
+                {y: price[4], label: "Minerals"}
+            ]
+        }]
+    });
+    chart.render();
+    
+    }
+    </script>
+</div>
+    </head>
+    
+    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<%- include ('partials/footer.ejs') %>

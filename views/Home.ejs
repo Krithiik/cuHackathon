@@ -1,0 +1,113 @@
+<%- include ('partials/header.ejs') %>
+<!DOCTYPE html>
+<html>
+    <title>Health-Wealth</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet"  type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <head>
+    <style>
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%)
+        }
+        .container:hover .image {
+            opacity: 0.3;
+        }
+        .container:hover .middle {
+            opacity: 1;
+        }
+        .text {
+            background-color: rgb(79, 171, 207);
+            color: white;
+            font-size: 16px;
+            padding: 16px 32px;
+        }
+    </style>
+    <body>
+        <!-------------------- Header ------------------------------->
+        <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+            <img class="w3-image" src="https://i.imgur.com/eDzmNoP.jpg" alt="icon" width="1500" height="100">
+            <div class="w3-display-middle w3-margin-top w3-center">
+                <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-white w3-opacity-min"><b>Health is Wealth</b></span> <span class="w3-hide-small w3-text-light-grey"></span></h1>
+            </div>
+        </header>
+
+        <!--------------------- Page content ------------------------->
+        <div class="w3-content w3-padding" style="max-width:1564px;">
+            <div class="w3-container w3-padding-32" id="projects">
+                <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"></h3>
+            </div>
+            <div class="w3-row-padding">
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="container">
+                            <img src="https://i.imgur.com/LuPWr9P.jpg" alt="covid" style="width:100%;" class="image">
+                            <div class="middle">
+                                <a href="/covid19" class="text">Covid-19</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-display-topleft w3-padding" style="font-weight: bold;font-size:x-large;">Be informed about Covid-19</div>
+                        <br><br><p style="width:80%;font-size: large;">Don't know whom to call in emergency situation?</p>
+                        <p style="width:80%;font-size: large;">Want to know the guidlines and advisories taken by Indian Government?</p>
+                        <p style="width:80%;font-size: large;">Wondering how many hospitals and beds are available for Covid-19 positive patients and also want to know which Medical colledges are made available for them?</p><br>
+                        <br><p style="font-weight: bold;"">Click on the link aside to get information regarding COVID-19.</p>
+                    </div>
+                </div>  
+            </div>
+            <div class="w3-container w3-padding-32" id="projects">
+                <h3 class="w3-border-bottom w3-border-light-grey"></h3>
+            </div>
+            <div class="w3-row-padding">
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="w3-display-topleft w3-padding mb-3"style="font-weight: bold;font-size:x-large;">Choose your meal</div>
+                        <br><br><p style="width:80%;font-size:large;">Are you going to gym but without having a balenced diet?</p>
+                        <p style="width:80%;font-size:large">Want to lose weight but don't know how to plan your meal?</p>
+                        <p style="width:80%;font-size: large;">Now we made it easy for you to follow a healthy lifestyle!A perfect site to have a customized meal as per your calorie requirement and recipes are available too.</p><br>
+                        <br><p style="font-weight: bold;">Check into this site to choose your meal.</p>
+                    </div>
+                </div>
+                <div class="w3-col l6 m6 w3-margin-bottom">
+                    <div class="w3-display-container">
+                        <div class="container">
+                            <img src="https://i.imgur.com/L7SIj5R.jpg" alt="House" style="width:100%;" class="image">
+                            <div class="middle">
+                                <a href="/search" class="text">Meal Planner</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!----------------- Feedback Section ------------------------------->
+            <div class="w3-container w3-padding-32" id="contact" style="background-color: rgb(181, 235, 235);">
+                <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16" style="font-weight:bold;font-size: xx-large;">Feedback Form</h3>
+                <p style="font-size: larger;">Please fill out this brief feedback form so we can ensure a top quality experience to all our visitors.</p>
+                <button class="w3-button w3-blue w3-section" type="submit">
+                     <a href="https://forms.gle/CrYopQ2ULfrcaKvA9" style="text-decoration: none;color: white;">Give your feedback here</a>
+                </button>
+                </form>
+            </div>
+            <!-- End page content -->
+        </div>
+    </body>
+</html>
+<%- include ('partials/footer.ejs') %>

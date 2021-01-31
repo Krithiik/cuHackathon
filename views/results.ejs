@@ -1,0 +1,60 @@
+<%- include ('partials/header.ejs') %>
+<div class="container" >
+<h1 style="margin-top:100px;">Here is the Meal plan !!</h1>
+<ul>
+<% var info=[]  %>
+    <% data["hits"].forEach(function(dish){ %>
+        <ul>
+            <div>
+            <div class="ui container">
+                <strong><li class="tittle"><%= dish["recipe"]["label"] %></li></strong>
+                <% name = dish["recipe"]["label"] %>
+                <% cal= dish["recipe"]["calories"]%>
+                <% fa=dish["recipe"]["totalNutrients"]["FAT"]["quantity"]%>
+                <% car=dish["recipe"]["totalNutrients"]["CHOCDF"]["quantity"]%>
+                <% pro=dish["recipe"]["totalNutrients"]["PROCNT"]["quantity"]%>
+                <% vA=dish["recipe"]["totalNutrients"]["VITA_RAE"]["quantity"]%>
+                <% vC=dish["recipe"]["totalNutrients"]["VITC"]["quantity"]%>
+                <% calc=dish["recipe"]["totalNutrients"]["CA"]["quantity"]%>
+                <% pot=dish["recipe"]["totalNutrients"]["K"]["quantity"]%>
+                <% object ={title:name,calories:cal,fat:fa,carb:car,protein:pro,vitA:vA,vitC:vC,cal:calc,pott:pot}%>
+                <% info.push(object)%>
+                <div class="ui item">
+                    <p></p>
+                    <li class="sub">Ingrediants Required: </li>
+                    <p><%= dish["recipe"]["ingredientLines"] %></p>
+                </div>
+                <div class="ui item">
+                    <p></p>
+                    <a href=<%= dish["recipe"]["url"] %>>Want the recipe?</a>
+                </div>
+                <p></p>
+                <div>
+                    <img src="<%= dish["recipe"]["image"] %>" >
+                    <p></p>
+                    <li class="sub">Health Labels</li>
+                    <p><%= dish["recipe"]["healthLabels"] %></p>
+                </div>
+                <p></p>
+                <li class="sub">Energy</li>
+                   <p><%= (dish["recipe"]["calories"]).toFixed(2) %>Kcal</p>
+           </div>
+        </div>
+    </ul>
+    <%  }) %>
+</ul>
+<%console.log(info);%>
+<p></p>
+<button class="ui primary basic button" onclick="refresh()"> Didn't like it ? Plan again!</button>
+<p></p>
+<form action="/analysis">
+<button class="ui primary basic button" type=submit onclick="store()">Happy Meal!</button>
+</form>
+</div>
+<script>
+function refresh(){
+    location.reload();
+}
+
+</script>
+<%- include ('partials/footer.ejs') %>
