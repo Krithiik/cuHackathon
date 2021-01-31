@@ -97,6 +97,6 @@ This web application also shows information regarding COVID-19.
 
 **Limitations:**
 
->As per the choices, request calls are made to API, which we used had limited calls and serveral constrinats over data retrievel. 
+>As per the choices, request calls are made to API, which we used had limited calls and serveral constraints over data retrievel. 
 
 
