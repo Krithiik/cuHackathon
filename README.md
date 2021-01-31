@@ -8,6 +8,8 @@ Team Members – Krithik, Dhiyanesh, Valliammai, Tejaswi
 We have designed a web application HEAL-CARE which provides customized healthy and balanced diet as per your requirements (i.e. calorie needs ingredient choice etc.).
 This web application also shows information regarding COVID-19. 
 
+website - https://salty-beyond-46398.herokuapp.com/Home
+
 **FEATURES OF WEBSITE**
 
 **MEAL PLANNER**
