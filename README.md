@@ -3,7 +3,7 @@ HEALTH IS WEALTH
 
 Team Name – Bits N Bytes
 
-Team Members – Krithik, Dhiyanesh, Valliammai, Tejaswi 
+Team Members – Krithiik, Dhiyanesh, Valliammai, Tejaswi 
 
 We have designed a web application HEAL-CARE which provides customized healthy and balanced diet as per your requirements (i.e. calorie needs ingredient choice etc.).
 This web application also shows information regarding COVID-19. 
